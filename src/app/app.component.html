@@ -1,0 +1,24 @@
+<nb-layout>
+  <nb-layout-header fixed style="font-size:20px;">Google Auth Login</nb-layout-header>
+  <nb-layout-column style="background-color: rgb(247, 220, 187);">
+    <!-- <p>Current User Authenticated: {{ !!token }}</p>
+    <p>Current User Token: {{ token|json }}</p> -->
+    <div class="row">
+      <div class="col-md-4 offset-md-4">
+        <nb-card *ngIf="token" class="bg-success">
+          <nb-card-body>
+            <nb-user size="giant" name={{data.name|json}} picture={{data.picture|json}}>
+            </nb-user>
+          </nb-card-body>
+        </nb-card>
+      </div>
+      <div class="col-md-12" style="text-align: center;">
+        <button nbButton status="success" *ngIf="!token" (click)="login()">Sign In with Google</button>
+        <button nbButton status="danger" *ngIf="token" (click)="logout()">Sign Out</button>
+      </div>
+    </div>
+
+
+  </nb-layout-column>
+
+</nb-layout>
